@@ -1,7 +1,7 @@
-numpy==1.24.3
-pickleshare==0.7.5
-streamlit==1.23.1
+numpy
+pickleshare
+streamlit
 scikit-learn
-comm==0.1.3
-pandas==2.0.1
-streamlit-custom-notification-box==0.1.2
+comm
+pandas
+streamlit-custom-notification-box
