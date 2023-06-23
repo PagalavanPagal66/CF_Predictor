@@ -269,10 +269,10 @@ def main(data):
 
 		elif choice == "Logout":
 			#st.subheader("User Profiles")
-			user_result = view_all_users()
-			clean_db = pd.DataFrame(user_result, columns=["Username", "Password", "Mail"])
-			print(pd)
-			st.dataframe(clean_db)
+			#user_result = view_all_users()
+			#clean_db = pd.DataFrame(user_result, columns=["Username", "Password", "Mail"])
+			#print(pd)
+			#st.dataframe(clean_db)
 			st.subheader("Are you sure that you want to quit....")
 			if(st.button("Confirm")):
 				st.success("You have logged out successfully")
@@ -299,7 +299,7 @@ def main(data):
 
 	elif selected == "Contact":
 		if int(data) == 1:
-			st.subheader("Wanakkam nanba ... !")
+			st.subheader("Share your feedback ... !")
 			text = st.text_area("Enter your feedback of our application : ")
 			if(st.button("Submit FeedBack")):
 				with open("uname.txt", 'r') as file:
