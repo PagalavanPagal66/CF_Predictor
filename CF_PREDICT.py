@@ -3,11 +3,8 @@ import time
 import streamlit as st
 import pickle
 import pandas as pd
-from sklearn.model_selection import train_test_split
 import warnings
 warnings.filterwarnings('ignore')
-from sklearn import linear_model
-from sklearn.linear_model import Ridge
 import hashlib
 import random
 import smtplib
