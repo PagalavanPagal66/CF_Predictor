@@ -6,6 +6,7 @@ import pandas as pd
 import warnings
 warnings.filterwarnings('ignore')
 import hashlib
+from streamlit_option_menu import option_menu
 import random
 import smtplib
 #from streamlit_custom_notification_box import custom_notification_box
