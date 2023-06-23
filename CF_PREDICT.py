@@ -93,8 +93,8 @@ def otpmailing(con,mail):
 	email_password = "qtlvbndfudxrvqrb"
 	email_receiver = mail
 
-	subject = "Authentication"
-	body = str(con)
+	subject = "Authentication for codeforces predictor application login"
+	body = str(con) + str(" - is the One Time Password for your login access... Hope you will enjoy my app...")
 
 	em = EmailMessage()
 	em['From'] = email_sender
@@ -300,7 +300,7 @@ def main(data):
 	elif selected == "Contact":
 		if int(data) == 1:
 			st.subheader("Share your feedback ... !")
-			text = st.text_area("Enter your feedback of our application : ")
+			text = st.text_area("Enter your feedback for my application : ")
 			if(st.button("Submit FeedBack")):
 				with open("uname.txt", 'r') as file:
 					username = file.read()
