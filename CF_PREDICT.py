@@ -184,7 +184,7 @@ def main(data):
 							# st.write("Inside the form")
 							otp = st.text_input("OTP")
 						# Every form must have a submit button
-							passval = st.text_input("New Password")
+							passval = st.text_input("New Password",type='password')
 							submitted = st.button("Submit")
 							if submitted:
 								with open('otp2.txt', 'r') as f:
@@ -200,7 +200,7 @@ def main(data):
 									print('data')
 									passval=str(passval)
 									update(username, make_hashes(passval), mail)
-									st.write(passval)
+									st.write("Remember your password : " + passval)
 									st.success("You have successfully changed your password")
 									print('yes')
 									st.info("you can now login again with your new password")
