@@ -74,8 +74,6 @@ def takemail(username):
 	return li[0][2]
 
 
-from streamlit_option_menu import option_menu
-
 with open("LASSO.txt",'rb')as f:
     model1 = pickle.load(f)
 
