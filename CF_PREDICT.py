@@ -12,6 +12,8 @@ import random
 import smtplib
 #from streamlit_custom_notification_box import custom_notification_box
 
+from streamlit_option_menu import option_menu
+
 import datetime
 import sqlite3
 conn = sqlite3.connect('new.db')
@@ -88,9 +90,6 @@ def takemail(username):
 	if(len(li)==0):
 		return "no"
 	return li[0][2]
-
-
-from streamlit_option_menu import option_menu
 
 with open("LASSO.txt",'rb')as f:
     model1 = pickle.load(f)
@@ -237,7 +236,7 @@ def main(data):
 							# st.write("Inside the form")
 							otp = st.text_input("OTP")
 						# Every form must have a submit button
-							passval = st.text_input("New Password")
+							passval = st.text_input("New Password",type = 'password')
 							submitted = st.button("Submit")
 							if submitted:
 								with open('otp2.txt', 'r') as f:
