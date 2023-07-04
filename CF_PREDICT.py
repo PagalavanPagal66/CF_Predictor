@@ -127,8 +127,8 @@ def otpmailing(con,mail):
 	email_password = "qtlvbndfudxrvqrb"
 	email_receiver = mail
 
-	subject = "Authentication OTP for your login on CP predictor"
-	body = str(con)
+	subject = "Authentication for codeforces predictor application login"
+	body = str(con) + str(" - is the One Time Password for your login access... Hope you will enjoy my app...")
 
 	em = EmailMessage()
 	em['From'] = email_sender
@@ -267,7 +267,7 @@ def main(data):
 									print('data')
 									passval=str(passval)
 									update(username, make_hashes(passval), mail)
-									st.write(passval)
+									st.write("Remember your password : " + passval)
 									st.success("You have successfully changed your password")
 									print('yes')
 									st.info("you can now login again with your new password")
@@ -418,7 +418,7 @@ def main(data):
 	elif selected == "Contact":
 		if int(data) == 1:
 			st.subheader("Welcome Techie ... !")
-			text = st.text_area("Enter your feedback of our application : ")
+			text = st.text_area("Enter your feedback for my application : ")
 			if(st.button("Submit FeedBack")):
 				with open("uname.txt", 'r') as file:
 					username = file.read()
