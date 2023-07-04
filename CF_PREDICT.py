@@ -108,7 +108,15 @@ with open("cclasso.txt",'rb')as f:
 
 with open("ccridge.txt",'rb')as f:
     ccridge = pickle.load(f)
+	
+with open("lclinear",'rb')as f:
+    lclinear = pickle.load(f)
 
+with open("lclasso",'rb')as f:
+    lclasso = pickle.load(f)
+
+with open("lcridge",'rb')as f:
+    lcridge = pickle.load(f)
 
 
 from email.message import EmailMessage
@@ -159,6 +167,13 @@ def predictioncc(rank,rating):
 	st.success("Ridge  Model  :"+str(ccridge.predict([[rank,rating]])))
 	st.success("Linear Model  :"+str(cclinear.predict([[rank,rating]])))
 
+def predictionlc(rank,rating):
+	rank = float(rank)
+	rating =float(rating)
+	st.success("Lasso  Model  :"+str(lclasso.predict([[rank,rating]])))
+	st.success("Ridge  Model  :"+str(lcridge.predict([[rank,rating]])))
+	st.success("Linear Model  :"+str(lclinear.predict([[rank,rating]])))
+	
 import requests
 
 def load_lottieurl(url : str):
@@ -368,12 +383,18 @@ def main(data):
 							# try:
 							prediction(division, rank, curr_rat)
 							st.balloons()
-					else:
+					elif add_radio == 'CodeChef':
 						rank = st.text_input("Rank")
 						curr_rat = st.text_input("Current Rating")
 						if (st.button("Predict")):
 						# try:
 							predictioncc(rank, curr_rat)
+							st.balloons()
+					else:
+						rank = st.text_input("Rank")
+						curr_rat = st.text_input("Current Rating")
+						if(st.button("Predict")):
+							predictionlc(curr_rat, rank)
 							st.balloons()
 				except:
 					st.warning("OOPS :) Something went wrong...!")
@@ -396,7 +417,7 @@ def main(data):
 
 	elif selected == "Contact":
 		if int(data) == 1:
-			st.subheader("Wanakkam nanba ... !")
+			st.subheader("Welcome Techie ... !")
 			text = st.text_area("Enter your feedback of our application : ")
 			if(st.button("Submit FeedBack")):
 				with open("uname.txt", 'r') as file:
