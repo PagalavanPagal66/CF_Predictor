@@ -372,7 +372,7 @@ def main(data):
 			with st.sidebar:
 				add_radio = st.radio(
 					"Choose a coding platform",
-					("CodeForces", "CodeChef")
+					("CodeForces", "CodeChef","Leetcode")
 				)
 				try:
 					if add_radio == 'CodeForces':
